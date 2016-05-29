@@ -1,0 +1,5 @@
+psycopg2==2.6.1
+wagtail==1.5
+django-sendfile==0.3.10
+factory-boy==2.7.0
+fake-factory==0.5.7

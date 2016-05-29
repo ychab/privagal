@@ -1,0 +1,22 @@
+# Python
+*.pyc
+__pycache__
+
+# Django
+privagal/settings/local.py
+media
+
+# Front-end
+privagal/static/bower_components
+node_modules
+
+# Tests, docs, etc
+.coverage
+.tox
+htmlcov
+docs/_build/
+*.mo
+fabfile.py
+
+# IDE settings
+.idea

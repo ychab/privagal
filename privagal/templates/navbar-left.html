@@ -1,0 +1,12 @@
+{% load i18n wagtailcore_tags %}
+
+<ul class="nav navbar-nav navbar-left">
+    <li><a href="{% slugurl 'timeline' %}"><span class="glyphicon glyphicon-eye-open"></span> {% trans "View all galleries" %}</a></li>
+</ul>
+
+<form action="{% slugurl 'timeline' %}" class="navbar-form navbar-left" role="search">
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="{% trans 'Search' %}" name="query"{% if search_query %} value="{{ search_query }}"{% endif %}>
+    </div>
+    <button type="submit" class="btn btn-primary">{% trans 'Search' %}</button>
+</form>

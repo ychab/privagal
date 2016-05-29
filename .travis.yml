@@ -1,0 +1,26 @@
+sudo: false
+language: python
+python:
+    - "3.4"
+addons:
+    postgresql: "9.4"
+env:
+    - TOXENV=py27
+    - TOXENV=py27_reverse
+    - TOXENV=py34
+    - TOXENV=py34_reverse
+    - TOXENV=pylama
+    - TOXENV=isort
+    - TOXENV=docs
+install:
+    - pip install coveralls tox
+before_script:
+    - createuser -U postgres -d privagal
+    - createdb -U postgres -O privagal privagal
+    - cp privagal/settings/local.dist privagal/settings/local.py
+    - sed -i 's/<DB_NAME>/privagal/g' privagal/settings/local.py
+    - sed -i 's/<DB_USER>/privagal/g' privagal/settings/local.py
+script:
+    - tox
+after_success:
+    - coveralls

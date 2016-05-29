@@ -1,0 +1,91 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-27 07:32+0000\n"
+"PO-Revision-Date: 2016-05-27 09:32+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 1.8.7.1\n"
+
+#: privagal/core/models.py:17
+msgid "Key"
+msgstr "Clé"
+
+#: privagal/core/wagtail_hooks.py:23
+msgid "Token link"
+msgstr "Lien avec jeton"
+
+#: privagal/core/wagtail_hooks.py:25
+msgid "Copy this link address to share it."
+msgstr "Copier l'adresse de ce lien pour le partager."
+
+#: privagal/gallery/models.py:32
+msgid "Images"
+msgstr "Images"
+
+#: privagal/gallery/models.py:40
+msgid "Gallery"
+msgstr "Galerie"
+
+#: privagal/gallery/templates/gallery/gallery.html:12
+msgid "Download"
+msgstr "Télécharger"
+
+#: privagal/templates/navbar.html:7
+msgid "All galleries"
+msgstr "Toutes les galeries"
+
+#: privagal/templates/navbar.html:12 privagal/templates/navbar.html:14
+msgid "Search"
+msgstr "Recherche"
+
+#: privagal/templates/pager.html:9
+msgid "Previous"
+msgstr "Précédent"
+
+#: privagal/templates/pager.html:16
+msgid "current"
+msgstr "actuel"
+
+#: privagal/templates/pager.html:21
+msgid "Next"
+msgstr "Suivant"
+
+#: privagal/templates/password_required.html:5
+msgid "Password required"
+msgstr "Mot de passe requis"
+
+#: privagal/templates/password_required.html:12
+msgid "You need a password to access this page."
+msgstr "Vous avez besoin d'un mot de passe pour accéder à cette page."
+
+#: privagal/templates/password_required.html:29
+msgid "Continue"
+msgstr "Continuer"
+
+#: privagal/templates/token_required.html:5
+msgid "Token link required"
+msgstr "Lien d'accès requis"
+
+#: privagal/templates/token_required.html:10
+msgid ""
+"You need a valid token link to access this page. Please contact an "
+"administrator."
+msgstr ""
+"Vous avez besoin d'un lien d'accès valide pour accéder à cette page. "
+"Merci de contacter un administrateur."
+
+#: privagal/timeline/templates/timeline/timeline.html:18
+msgid "No gallery are published yet."
+msgstr "Aucune de galerie publiée."

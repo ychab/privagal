@@ -1,0 +1,41 @@
+{% extends "page.html" %}
+
+{% load i18n static wagtailcore_tags privagalcore_tags %}
+
+{% block navbar-right %}
+{% include 'navbar-right.html' with gallery=self %}
+{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+    <h3>
+        <small>{{ self.date|date:"SHORT_DATE_FORMAT" }}</small>
+        {{ self.title }}
+    </h3>
+</div>
+
+<div class="gallery-text">{{ self.body|richtext }}</div>
+
+{% if self.images %}
+<div class="container-fluid">
+    <div class="grid">
+        <div class="grid-sizer col-xs-12 col-sm-6 col-md-4"></div>
+        {% for image in self.images.all %}
+        <div class="grid-item col-xs-12 col-sm-6 col-md-4">
+            <a href="{{ image.image.file.url }}" target="_blank">
+                <img
+                    sizes="(max-width: 767px) 60vw, 30vw"
+                    srcset="{% image_url image.image 'width-200' %} 200w,
+                            {% image_url image.image 'width-400' %} 400w,
+                            {% image_url image.image 'width-600' %} 600w"
+                    title="{{ image.image.title }}"
+                    alt="{{ image.description }}" />
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,13 @@
+{% load i18n wagtailcore_tags privagalcore_tags %}
+
+<div class="panel panel-default">
+    <div class="panel-heading">{{ page.date|date:"SHORT_DATE_FORMAT" }}</div>
+    <div class="panel-body">
+        <a class="thumbnail" href="{{ page.url }}" target="_blank">
+            <img
+                src="{% image_url page.image_teaser.image 'max-200x150' %}"
+                title="{{ page.image_teaser.image.title }}"
+                alt="{{ page.image_teaser.description }}" />
+        </a>
+    </div>
+</div>

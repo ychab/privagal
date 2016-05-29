@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block title %}{% trans "Token link required" %}{% endblock %}
+
+{% block body_class %}no-title{% endblock %}
+
+{% block container_class %}container{% endblock %}
+
+{% block content %}
+<p>{% trans "You need a valid token link to access this page. Please contact an administrator." %}</p>
+{% endblock %}

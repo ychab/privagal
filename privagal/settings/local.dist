@@ -1,0 +1,28 @@
+import os
+
+from .base import *
+
+ALLOWED_HOSTS = []
+
+PRIVAGAL_TIMELINE_INITIAL_PASSWORD = ''
+PRIVAGAL_SITE_HOSTNAME = '127.0.0.1'  # Change it at least for production!
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': '<DB_NAME>',
+        'USER': '<DB_USER>',
+        'PASSWORD': '',
+        'HOST': '',
+        'PORT': '',
+    }
+}
+
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+SENDFILE_ROOT = os.path.join(MEDIA_ROOT)
+
+LANGUAGE_CODE = 'en-us'
+
+PRIVAGAL_AUTH_TOKEN_REQUIRED = False

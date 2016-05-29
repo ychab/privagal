@@ -1,0 +1,9 @@
+{% load i18n %}
+
+<ul class="nav navbar-nav navbar-right">
+    <li>
+        <a href="{% url 'galleries:download' gallery.pk %}">
+            <span class="glyphicon glyphicon-compressed"></span> {% trans "Download" %}
+        </a>
+    </li>
+</ul>
