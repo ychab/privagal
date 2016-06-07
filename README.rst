@@ -45,7 +45,6 @@ and is mainly a glue codes between the following technologies:
 * Backend:
 
     *   `Wagtail`_ CMS to manage pages and images of your galleries
-    *   `Django`_ Framework to manage token access
     *   `django-sendfile`_ app to use differents backends to serve private
         images (`Xsendfile`_ with Apache or `X-Accel`_ with Nginx)
 
@@ -56,7 +55,6 @@ and is mainly a glue codes between the following technologies:
     *   `Infinite Ajax Scroll`_ to replace classic pager
 
 .. _`Wagtail`: https://wagtail.io/
-.. _`Django`: https://www.djangoproject.com/
 .. _`django-sendfile`: https://github.com/johnsensible/django-sendfile
 
 .. _`Xsendfile`: https://tn123.org/mod_xsendfile/
