@@ -9,10 +9,3 @@ Privagal's documentation
    tests
    usage
 
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
