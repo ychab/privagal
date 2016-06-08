@@ -107,7 +107,7 @@ By default, it will compile and minified JS and LESS files::
 Because executing it every time is painful, you can watch changes with the
 following command::
 
-    ./node_modules/gulp/bin/gulp.js watch watch
+    ./node_modules/gulp/bin/gulp.js watch
 
 .. _`Gulp`: http://gulpjs.com/
 
