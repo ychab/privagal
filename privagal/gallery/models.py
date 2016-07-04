@@ -5,7 +5,7 @@ import os
 import zipfile
 
 from django.conf import settings
-from django.db import models
+from django.db import models, transaction
 from django.template import loader
 from django.utils import timezone
 from django.utils.translation import ugettext_lazy as _
@@ -38,6 +38,15 @@ class Gallery(AuthTokenPageMixin, Page):
     class Meta:
         db_table = 'privagal_gallery'
         verbose_name = _("Gallery")
+
+    def delete(self, *args, **kwargs):
+        with transaction.atomic():
+            # We need to call model instance method BEFORE deleting the
+            # instance itself to delete image in cascade. This is worst for
+            # performance than using QuerySet manager but it keep it stupid.
+            for image in self.images.all():
+                image.delete()
+            super(Gallery, self).delete(*args, **kwargs)
 
     @property
     def image_teaser(self):
@@ -77,10 +86,15 @@ class Gallery(AuthTokenPageMixin, Page):
 
 
 class ImageGallery(Orderable):
-    page = ParentalKey(Gallery, related_name='images')
+    page = ParentalKey(
+        Gallery,
+        related_name='images',
+        on_delete=models.CASCADE,
+    )
     image = models.ForeignKey(
         get_image_model(),
-        related_name='images_gallery'
+        related_name='images_gallery',
+        on_delete=models.CASCADE,
     )
     description = models.TextField(default='', blank=True)
 
@@ -88,3 +102,8 @@ class ImageGallery(Orderable):
         ImageChooserPanel('image'),
         FieldPanel('description'),
     ]
+
+    def delete(self, *args, **kwargs):
+        with transaction.atomic():
+            self.image.delete()
+            super(ImageGallery, self).delete(*args, **kwargs)
