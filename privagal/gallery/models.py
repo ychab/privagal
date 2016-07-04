@@ -103,6 +103,10 @@ class ImageGallery(Orderable):
         FieldPanel('description'),
     ]
 
+    class Meta:
+        db_table = 'privagal_gallery_image'
+        verbose_name = _("Gallery")
+
     def delete(self, *args, **kwargs):
         with transaction.atomic():
             self.image.delete()
