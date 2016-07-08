@@ -14,7 +14,6 @@ from wagtail.wagtailadmin.edit_handlers import FieldPanel, InlinePanel
 from wagtail.wagtailcore.fields import RichTextField
 from wagtail.wagtailcore.models import PAGE_TEMPLATE_VAR, Orderable, Page
 from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
-from wagtail.wagtailimages.models import get_image_model
 
 from modelcluster.fields import ParentalKey
 from sendfile import sendfile
@@ -92,7 +91,7 @@ class ImageGallery(Orderable):
         on_delete=models.CASCADE,
     )
     image = models.ForeignKey(
-        get_image_model(),
+        settings.WAGTAILIMAGES_IMAGE_MODEL,
         related_name='images_gallery',
         on_delete=models.CASCADE,
     )

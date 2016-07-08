@@ -110,6 +110,7 @@ LOGGING = copy.deepcopy(DEFAULT_LOGGING)
 
 WAGTAIL_SITE_NAME = "privagal"
 WAGTAILIMAGES_JPEG_QUALITY = 85
+WAGTAILIMAGES_IMAGE_MODEL = 'wagtailimages.image'
 PASSWORD_REQUIRED_TEMPLATE = 'password_required.html'
 
 # Privagal settings
